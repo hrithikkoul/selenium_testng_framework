@@ -1,0 +1,10 @@
+<suite name="OrangeHRM Automation Suite">
+    <test name="Full Regression">
+        <classes>
+            <class name="com.example.SeleniumTest"/>
+            <class name="com.example.DashboardTest"/>
+            <class name="com.example.AdminTest"/>
+            <class name="com.example.LeaveTest"/>
+        </classes>
+    </test>
+</suite>
