@@ -50,7 +50,7 @@ public class LeavePage {
 
     // Results Tables & Actions
     private By searchButton = By.xpath("//button[@type='submit']");
-    private By statusDropdown = By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[2]/div[2]/div/div[1]/div/div[7]]");
+    private By statusDropdown = By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[2]/div[2]/div/div[1]/div/div[7]");
     private By approveButton = By.xpath("(//div[@class='oxd-table-body']/div[@class='oxd-table-card'])[1]//button[normalize-space()='Approve']");
     private By firstRowStatusCell = By.xpath("(//div[@class='oxd-table-body']/div[@class='oxd-table-card'])[1]//div[@role='cell'][count(//div[@class='oxd-table-header']//div[@role='columnheader'][normalize-space()='Status']/preceding-sibling::div) + 1]");
     private By firstRowBalanceCell = By.xpath("(//div[@class='oxd-table-body']/div[@class='oxd-table-card'])[1]//div[@role='cell'][count(//div[@class='oxd-table-header']//div[@role='columnheader'][contains(normalize-space(),'Leave Balance')]/preceding-sibling::div) + 1]");

@@ -1,10 +1,10 @@
 package com.example;
-
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -23,11 +23,23 @@ public class SeleniumTest {
     ExtentTest test;
 
     @BeforeMethod
+    
     public void setup() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+
+        boolean headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+
+        ChromeOptions options = new ChromeOptions();
+        if (headless) {
+            options.addArguments("--headless=new", "--window-size=1920,1080");
+        }
+        options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
+
+        driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        driver.manage().window().maximize();
+        if (!headless) {
+            driver.manage().window().maximize();
+        }
         driver.get("https://opensource-demo.orangehrmlive.com/");
     }
 
